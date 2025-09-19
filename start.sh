@@ -1,18 +1,18 @@
 #!/bin/bash
 
-# Navigate to app directory
+# Navigate into the app directory (where your main.py is)
 cd app
 
-# Download models using gdown (Google Drive)
-# Install gdown if not already installed
+# Install gdown to download files from Google Drive
 pip install gdown
 
-# Download the models (replace FILE_IDs with actual IDs)
-gdown https://drive.google.com/uc?id=FNN_FILE_ID -O fnn.pth
-gdown https://drive.google.com/uc?id=CNN_FILE_ID -O cnn.pth
+# Download your model file from Google Drive
+# Replace with correct filename (fnn.pth, cnn.pth, etc.)
+gdown https://drive.google.com/uc?id=1Vy6DRtNMnabCz3lk0PqS1q-oJ8yRFyKp -O cnn.pth
+gdown https://drive.google.com/uc?id=1glaYyHQmMxXsmm7iQvybH0kJWsQAWMaA -O fnn.pth
 
-# Go back to root (if needed)
-cd ..
+# Add more gdown lines if you have multiple models
+# gdown https://drive.google.com/uc?id=YOUR_OTHER_FILE_ID -O cnn.pth
 
-# Start the FastAPI app
-uvicorn app.main:app --host=0.0.0.0 --port=8000
+# Run your FastAPI server
+uvicorn main:app --host=0.0.0.0 --port=8000
